@@ -151,19 +151,19 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 - UPD: Move to GitHub.
 - UPD: License.
 
-* Tue Mar 31 2020 Package Store <pkgstore@pm.me> - 4.3.3-101
+* Tue Mar 31 2020 Package Store <kitsune.solar@gmail.com> - 4.3.3-101
 - FIX: Delete freedoom recommends.
 
-* Fri Mar 13 2020 Package Store <pkgstore@pm.me> - 4.3.3-100
+* Fri Mar 13 2020 Package Store <kitsune.solar@gmail.com> - 4.3.3-100
 - NEW: v4.3.3.
 
-* Thu Oct 03 2019 Package Store <pkgstore@pm.me> - 4.2.1-100
+* Thu Oct 03 2019 Package Store <kitsune.solar@gmail.com> - 4.2.1-100
 - NEW: v4.2.1.
 
-* Mon Jul 08 2019 Package Store <pkgstore@pm.me> - 4.1.3-101
+* Mon Jul 08 2019 Package Store <kitsune.solar@gmail.com> - 4.1.3-101
 - UPD: SPEC-file.
 
-* Mon Jul 08 2019 Package Store <pkgstore@pm.me> - 4.1.3-100
+* Mon Jul 08 2019 Package Store <kitsune.solar@gmail.com> - 4.1.3-100
 - UPD: MARKETPLACE.
 
 * Mon Jun 10 2019 Louis Abel <tucklesepk@gmail.com> - 4.1.3-1
