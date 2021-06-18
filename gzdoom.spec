@@ -85,12 +85,13 @@ GZDoom provides an OpenGL renderer and HQnX rescaling.
 
 %prep
 %setup -qn %{name}-g%{version}
-%patch -P 1 -p1
+%patch -P 1 -P 2 -p1
 
 perl -i -pe 's{__DATE__}{""}g' \
   src/common/platform/posix/sdl/i_main.cpp
 perl -i -pe 's{<unknown version>}{%version}g' \
   tools/updaterevision/UpdateRevision.cmake
+
 
 %build
 %define _lto_cflags %nil
@@ -106,6 +107,7 @@ perl -i -pe 's{<unknown version>}{%version}g' \
 
 #make_build -C builddir
 %{__make} %{?_smp_mflags} -C builddir
+
 
 %install
 %{__rm} -rf %{buildroot}
@@ -140,6 +142,7 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 %{_datadir}/doom/*
 %{_docdir}/%{name}/*
 %{_datadir}/icons/hicolor/256x256/apps/gzdoom.xpm
+%{_datadir}/games/doom/*
 
 
 %changelog
