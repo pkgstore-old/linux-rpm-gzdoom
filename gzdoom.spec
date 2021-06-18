@@ -1,4 +1,4 @@
-%global release_prefix          101
+%global release_prefix          102
 
 Name:                           gzdoom
 Version:                        4.6.0
@@ -6,8 +6,10 @@ Release:                        %{release_prefix}%{?dist}
 Summary:                        An OpenGL DOOM source port with graphic and modding extensions
 License:                        GPLv3
 URL:                            https://zdoom.org
+Vendor:                         Package Store <https://pkgstore.github.io>
+Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
-Source0:                        https://github.com/coelckers/gzdoom/archive/%{name}-g%{version}.tar.gz
+Source0:                        https://github.com/coelckers/gzdoom/archive/v%{version}/%{name}-g%{version}.tar.gz
 
 Patch1:                         %{name}-waddir.patch
 Patch2:                         %{name}-asmjit.patch
@@ -21,10 +23,10 @@ BuildRequires:                  git
 BuildRequires:                  nasm
 BuildRequires:                  glew-devel
 
-# Todo: Patch
-#BuildRequires:  glslang-devel
+# Todo: Patch.
+# BuildRequires:  glslang-devel
 
-# pkgconfig
+# pkgconfig.
 BuildRequires:                  pkgconfig(flac)
 BuildRequires:                  pkgconfig(bzip2)
 BuildRequires:                  pkgconfig(zlib)
@@ -48,7 +50,7 @@ Requires:                       openal-soft
 Requires:                       fluidsynth
 Requires:                       SDL2
 
-# ZMusic Requirement
+# ZMusic requirement.
 BuildRequires:                  zmusic-devel
 Requires:                       zmusic
 
@@ -105,19 +107,19 @@ perl -i -pe 's{<unknown version>}{%version}g' \
         -DINSTALL_PK3_PATH="%{_datadir}/doom"     \
         -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
-#make_build -C builddir
+# make_build -C builddir
 %{__make} %{?_smp_mflags} -C builddir
 
 
 %install
 %{__rm} -rf %{buildroot}
 
-# Install gzdoom
+# Install GZDoom.
 %{make_install} -C builddir
 
 %{__mkdir} -p %{buildroot}%{_datadir}/applications
 
-# Don't know why but the XPM isn't put anywhere
+# Don't know why but the XPM isn't put anywhere.
 %{__mkdir_p} %{buildroot}%{_datadir}/icons/hicolor/256x256/apps
 %{__cp} %{_builddir}/%{name}-g%{version}/src/posix/zdoom.xpm \
   %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/gzdoom.xpm
@@ -146,6 +148,9 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 
 
 %changelog
+* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-102
+- UPD: Add "Vendor" & "Packager" fields.
+
 * Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-101
 - UPD: New build for latest changes.
 
