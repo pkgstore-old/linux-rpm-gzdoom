@@ -1,4 +1,4 @@
-%global release_prefix          100
+%global release_prefix          101
 
 Name:                           gzdoom
 Version:                        4.6.0
@@ -146,6 +146,9 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 
 
 %changelog
+* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-101
+- UPD: New build for latest changes.
+
 * Thu Jun 17 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-100
 - NEW: v4.6.0.
 - UPD: Move to GitHub.
