@@ -9,7 +9,7 @@ URL:                            https://zdoom.org
 Vendor:                         Package Store <https://pkgstore.github.io>
 Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
-Source0:                        https://github.com/coelckers/gzdoom/archive/v%{version}/%{name}-g%{version}.tar.gz
+Source0:                        https://github.com/coelckers/gzdoom/archive/v%{version}.tar.gz#/%{name}-g%{version}.tar.gz
 
 Patch1:                         %{name}-waddir.patch
 Patch2:                         %{name}-asmjit.patch
