@@ -30,6 +30,7 @@ GZDoom provides an OpenGL renderer and HQnX rescaling.
 
 ```
 $ dnf copr enable pkgstore/gzdoom
+$ dnf install -y gzdoom
 ```
 
 ### Open Build Service (OBS)
