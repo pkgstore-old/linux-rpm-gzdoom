@@ -45,4 +45,10 @@ $ dnf install -y gzdoom
 $ dnf upgrade -y gzdoom
 ```
 
-## How to Build
+## Syntax
+
+### Load WAD
+
+```
+gzdoom -file 'DOOM.WAD'
+```
