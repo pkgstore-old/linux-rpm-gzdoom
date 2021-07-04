@@ -45,6 +45,13 @@ $ dnf install -y gzdoom
 $ dnf upgrade -y gzdoom
 ```
 
+## Remove
+
+```
+$ dnf erase -y gzdoom
+$ dnf copr remove pkgstore/gzdoom
+```
+
 ## Syntax
 
 ### Load WAD
