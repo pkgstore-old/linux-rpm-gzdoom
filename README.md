@@ -57,5 +57,6 @@ $ dnf copr remove pkgstore/gzdoom
 ### Load WAD
 
 ```
-gzdoom -file 'DOOM.WAD'
+$ gzdoom -iwad 'DOOM.WAD'
+$ gzdoom -iwad 'DOOM.WAD' -file 'SIGIL_v1_21.wad'
 ```
