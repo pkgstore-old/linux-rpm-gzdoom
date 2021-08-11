@@ -1,7 +1,7 @@
-%global release_prefix          102
+%global release_prefix          100
 
 Name:                           gzdoom
-Version:                        4.6.0
+Version:                        4.6.1
 Release:                        %{release_prefix}%{?dist}
 Summary:                        An OpenGL DOOM source port with graphic and modding extensions
 License:                        GPLv3
@@ -148,6 +148,9 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 
 
 %changelog
+* Wed Aug 11 2021 Package Store <kitsune.solar@gmail.com> - 4.6.1-100
+- NEW: v4.6.1.
+
 * Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-102
 - UPD: Add "Vendor" & "Packager" fields.
 
