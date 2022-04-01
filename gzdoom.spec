@@ -1,15 +1,13 @@
-%global release_prefix          100
+%global release_prefix          1000
 
 Name:                           gzdoom
-Version:                        4.6.1
+Version:                        4.7.1
 Release:                        %{release_prefix}%{?dist}
 Summary:                        An OpenGL DOOM source port with graphic and modding extensions
 License:                        GPLv3
 URL:                            https://zdoom.org
-Vendor:                         Package Store <https://pkgstore.github.io>
-Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
-Source0:                        https://github.com/coelckers/gzdoom/archive/v%{version}.tar.gz#/%{name}-g%{version}.tar.gz
+Source0:                        %{name}-g%{version}.tar.xz
 
 Patch1:                         %{name}-waddir.patch
 Patch2:                         %{name}-asmjit.patch
@@ -97,15 +95,16 @@ perl -i -pe 's{<unknown version>}{%version}g' \
 
 %build
 %define _lto_cflags %nil
-%cmake  -B builddir                               \
-        -DNO_STRIP=1                              \
-        -DCMAKE_SHARED_LINKER_FLAGS=""            \
-        -DCMAKE_EXE_LINKER_FLAGS=""               \
-        -DCMAKE_MODULE_LINKER_FLAGS=""            \
-        -DBUILD_SHARED_LIBS="OFF"                 \
-        -DINSTALL_DOCS_PATH="%{_docdir}/%{name}"  \
-        -DINSTALL_PK3_PATH="%{_datadir}/doom"     \
-        -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%{cmake}                                    \
+  -B builddir                               \
+  -DNO_STRIP=1                              \
+  -DCMAKE_SHARED_LINKER_FLAGS=""            \
+  -DCMAKE_EXE_LINKER_FLAGS=""               \
+  -DCMAKE_MODULE_LINKER_FLAGS=""            \
+  -DBUILD_SHARED_LIBS="OFF"                 \
+  -DINSTALL_DOCS_PATH="%{_docdir}/%{name}"  \
+  -DINSTALL_PK3_PATH="%{_datadir}/doom"     \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
 # make_build -C builddir
 %{__make} %{?_smp_mflags} -C builddir
@@ -148,33 +147,38 @@ echo "INFO: %{name}: The global IWAD directory is %{_datadir}/doom."
 
 
 %changelog
-* Wed Aug 11 2021 Package Store <kitsune.solar@gmail.com> - 4.6.1-100
+* Fri Apr 01 2022 Package Store <pkgstore@mail.ru> - 4.7.1-1000
+- NEW: GZDoom v4.7.1.
+- UPD: Rebuild by Package Store.
+- UPD: File "gzdoom.spec".
+
+* Wed Aug 11 2021 Package Store <pkgstore@mail.ru> - 4.6.1-100
 - NEW: v4.6.1.
 
-* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-102
+* Fri Jun 18 2021 Package Store <pkgstore@mail.ru> - 4.6.0-102
 - UPD: Add "Vendor" & "Packager" fields.
 
-* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-101
+* Fri Jun 18 2021 Package Store <pkgstore@mail.ru> - 4.6.0-101
 - UPD: New build for latest changes.
 
-* Thu Jun 17 2021 Package Store <kitsune.solar@gmail.com> - 4.6.0-100
+* Thu Jun 17 2021 Package Store <pkgstore@mail.ru> - 4.6.0-100
 - NEW: v4.6.0.
 - UPD: Move to GitHub.
 - UPD: License.
 
-* Tue Mar 31 2020 Package Store <kitsune.solar@gmail.com> - 4.3.3-101
+* Tue Mar 31 2020 Package Store <pkgstore@mail.ru> - 4.3.3-101
 - FIX: Delete freedoom recommends.
 
-* Fri Mar 13 2020 Package Store <kitsune.solar@gmail.com> - 4.3.3-100
+* Fri Mar 13 2020 Package Store <pkgstore@mail.ru> - 4.3.3-100
 - NEW: v4.3.3.
 
-* Thu Oct 03 2019 Package Store <kitsune.solar@gmail.com> - 4.2.1-100
+* Thu Oct 03 2019 Package Store <pkgstore@mail.ru> - 4.2.1-100
 - NEW: v4.2.1.
 
-* Mon Jul 08 2019 Package Store <kitsune.solar@gmail.com> - 4.1.3-101
+* Mon Jul 08 2019 Package Store <pkgstore@mail.ru> - 4.1.3-101
 - UPD: SPEC-file.
 
-* Mon Jul 08 2019 Package Store <kitsune.solar@gmail.com> - 4.1.3-100
+* Mon Jul 08 2019 Package Store <pkgstore@mail.ru> - 4.1.3-100
 - UPD: MARKETPLACE.
 
 * Mon Jun 10 2019 Louis Abel <tucklesepk@gmail.com> - 4.1.3-1
